@@ -1,100 +1,42 @@
 # n8n Master Grok Bot
 
-A single Grok Build workspace plus a copy-paste hosted Grok Bot charter that routes across official n8n skills, a broad community supplement, live n8n documentation, the target instance MCP, and a production commerce/inventory skill.
+This plugin turns a Grok Bot into an n8n control plane: live official docs, official workflow skills, and (after you connect it) your n8n instance over HTTP MCP.
 
-## Included
+It does not host n8n, it does not ship a token, and it will not write production workflows unless you expose them and say so.
 
-- 14 official n8n skills: 13 capability modules plus the official router.
-- 23 repository-native n8n engineering skills from the current `n8n-io/n8n` monorepo.
-- 15 community skills from `czlonkowski/n8n-skills`, subordinate to official sources.
-- One original commerce/inventory master skill.
-- One setup skill (`n8n-master-setup`): BWS/`N8N_MCP` mapping, canary-first safety, MCP scope.
-- Live official n8n docs MCP.
-- Secure script to add a project-scoped n8n instance MCP (token placeholder only).
-- Deterministic source lock, update script, local integrity check, and license files.
+## Why install it
 
-## Install
+Grok is not in n8n's OAuth client list, and Grok cannot whitelist MCP tools. Most n8n+AI setups either commit a token or expose every workflow. This one keeps the token as an env placeholder, ships **docs MCP only**, and treats **Available in MCP** as the real wall. You prove a read-only canary before anything else.
 
-1. Install Grok Build if needed:
+## Who it's for
 
-   ```bash
-   curl -fsSL https://x.ai/cli/install.sh | bash
-   ```
+People who already run n8n (Cloud or HTTPS self-host) and want a Grok Bot to inspect, design, and test workflows.
 
-2. Unzip this workspace, enter it, and verify discovery:
+## What it will not do
 
-   ```bash
-   cd n8n-master-grok-bot
-   ./scripts/verify.sh
-   ```
+- Will not SSH into n8n or your laptop.
+- Will not publish itself to the public Grok marketplace.
+- Will not enable production write workflows on MCP (payments, catalog, ERP, PII).
+- Will not put secrets in git or chat.
+- Will not read workflow bodies until you mark them Available in MCP. It **can** still see workflow names.
 
-3. In n8n, enable **Settings > Instance-level MCP**. Use least privilege. Expose **only** a read-only canary workflow until that canary returns `{ok:true,canary:true}`.
-
-   Grok Build is not in n8n's OAuth client list (Claude, Cursor, VS Code, etc.). Use the **API key** tab: copy the Server URL and personal access token. Store the token outside git as `N8N_MCP_ACCESS_TOKEN`. Optional Bitwarden Secrets Manager key name: `N8N_MCP`. Do not put it in this repo or in chat.
-
-4. Connect this workspace (HTTPS instance URL, no path):
-
-   ```bash
-   export N8N_MCP_ACCESS_TOKEN
-   ./scripts/connect-n8n.sh https://YOUR-N8N-DOMAIN
-   grok mcp doctor
-   grok inspect
-   ```
-
-   Confirm `.grok/config.toml` contains `Bearer ${N8N_MCP_ACCESS_TOKEN}`, not the raw key.
-
-   Prove the bot on the canary first, then on other **non-production** n8n workflows. Only then consider live production workflows, and never enable production write workflows on MCP without an explicit human GO.
-
-5. Start Grok in this directory:
-
-   ```bash
-   grok
-   ```
-
-6. First prompt:
-
-   ```text
-   /n8n-master-readiness
-   ```
-
-## Safe update
+## 60-second install
 
 ```bash
-./scripts/update-skills.sh
-```
-
-Review the diff and source commits. Do not auto-accept new community code, hooks, or MCP servers.
-
-## Important limit
-
-No static bundle contains every current community skill or every SaaS API. "Hypercurrent" comes from the live official docs MCP and target-instance schema discovery. This bundle includes the complete official workflow skill pack and one broad, actively maintained community pack; additional community packages require explicit supply-chain review.
-
-## Marketplace (Grok plugin)
-
-This repository is a Grok marketplace with one plugin, `n8n-master-grok-bot`. Skills live in `plugins/n8n-master-grok-bot/skills/`; `.grok/skills` is a symlink so Grok Build in this folder still works.
-
-Validate locally, then add and install. Do not publish to the public Grok marketplace until a human owner does it. Do not treat production-write MCP exposure as a default.
-
-```bash
-grok plugin validate ./plugins/n8n-master-grok-bot
+curl -fsSL https://x.ai/cli/install.sh | bash   # skip if grok already works
+git clone https://github.com/shagghiesuperstar/n8n-master-grok-bot.git
+cd n8n-master-grok-bot
+./scripts/verify.sh
 grok plugin marketplace add .
 grok plugin install n8n-master-grok-bot --trust
 ```
 
-The plugin ships the official n8n **docs** MCP only. Connect the instance MCP with `./scripts/connect-n8n.sh` after install. After a git remote exists:
+In n8n: Settings → Instance-level MCP → on. Use the **API key** tab (not OAuth). Store the key in your environment as `N8N_MCP` or `N8N_MCP_ACCESS_TOKEN`. Do not paste it into chat or this repo.
 
-```bash
-grok plugin marketplace add https://YOUR-GIT-HOST/YOUR-ORG/n8n-master-grok-bot.git
-```
+## Point your Grok Bot here
 
-## Hosted Grok Bot path
+Open a new Grok Bot. Paste the entire file `AGENT_INSTALL.md`. Put your n8n HTTPS origin on the last line (no path, example `https://YOUR-WORKSPACE.app.n8n.cloud`).
 
-Use `GROK-BOT-INSTRUCTIONS.md` as the Bot charter. At `grok.com/connectors`, add the official docs MCP (`https://docs.n8n.io/~gitbook/mcp`) and your HTTPS n8n instance MCP URL ending in `/mcp-server/http`. Authenticate with the n8n **API key** (Bearer token); Grok is not in n8n's OAuth client dropdown. Restrict which workflows/agents are exposed. Import/install the bundled skills through Grok's supported Plugins/Skills UI where available.
+The bot clones/installs, wires HTTP MCP, proves a read-only canary, and stops. You should not have to run the leftover commands yourself.
 
-Hosted Grok Bot custom MCP connectors must be internet-reachable. Do not tunnel an unauthenticated n8n MCP endpoint. Canary-first, then non-production, then production only with a human GO.
-
-## MCP scope reminder
-
-- Instance-level MCP (this repo) is not the MCP Server Trigger node.
-- Per-workflow **Available in MCP** is the blast-radius control.
-- Project/folder **Manage MCP access** can bulk-toggle. Leave production write workflows off.
+Then read `SECURITY.md` before you expose any real workflow.
