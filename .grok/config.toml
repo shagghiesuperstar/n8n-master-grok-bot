@@ -6,7 +6,7 @@ startup_timeout_sec = 30
 tool_timeout_sec = 600
 
 # Do not commit an instance URL or token.
-# export N8N_MCP_ACCESS_TOKEN   # or map BWS secret N8N_MCP
-# ./scripts/connect-n8n.sh https://YOUR-N8N-DOMAIN
-# Confirm Authorization stays as Bearer ${N8N_MCP_ACCESS_TOKEN}
+# Store the Instance-level MCP API key as BWS secret N8N_MCP (alias N8N_MCP_ACCESS_TOKEN).
+# bws run -- ./scripts/connect-n8n.sh https://YOUR-N8N-DOMAIN
+# Authorization must stay a ${N8N_MCP} placeholder, never a literal token.
 # Canary-first: Available in MCP only on a read-only canary, then /n8n-master-readiness.

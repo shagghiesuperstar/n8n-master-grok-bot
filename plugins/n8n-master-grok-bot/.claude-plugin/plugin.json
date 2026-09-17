@@ -1,6 +1,6 @@
 {
   "name": "n8n-master-grok-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "n8n control-plane plugin: official skills, community supplement, commerce/inventory master, and live n8n docs MCP.",
   "author": {
     "name": "n8n Master Grok"
