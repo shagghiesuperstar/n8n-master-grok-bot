@@ -1,0 +1,6 @@
+official=180b8415e3b73f78828cfa01e908e67f89f2a139
+community=19cd793f4789e3ef9c657ccf26e097f641a77df0
+assembled_utc=2026-09-17T14:49:00Z
+n8n_latest_stable_at_cutoff=2.39.7
+n8n_prerelease_at_cutoff=2.40.2
+n8n_monorepo=b26bb7f45296c90e96aeacd7355715b086228145

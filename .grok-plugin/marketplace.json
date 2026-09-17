@@ -1,0 +1,34 @@
+{
+  "name": "n8n Master Grok",
+  "description": "Official-first n8n control-plane skills, live docs MCP, and a hosted Grok Bot charter for workflow engineering and commerce/inventory automation.",
+  "owner": {
+    "name": "n8n Master Grok"
+  },
+  "plugins": [
+    {
+      "name": "n8n-master-grok-bot",
+      "description": "n8n control-plane plugin: official workflow skills, n8n monorepo engineering skills, community supplement, commerce/inventory master, and live n8n docs MCP.",
+      "version": "1.0.1",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/n8n-master-grok-bot"
+      },
+      "tags": [
+        "n8n",
+        "workflows",
+        "mcp",
+        "automation",
+        "commerce"
+      ],
+      "keywords": [
+        "n8n",
+        "grok",
+        "mcp",
+        "workflow",
+        "inventory",
+        "skills"
+      ]
+    }
+  ]
+}

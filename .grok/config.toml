@@ -1,0 +1,12 @@
+# Project-scoped official n8n docs MCP. No secret is required.
+[mcp_servers.n8n-docs]
+url = "https://docs.n8n.io/~gitbook/mcp"
+enabled = true
+startup_timeout_sec = 30
+tool_timeout_sec = 600
+
+# Do not commit an instance URL or token.
+# export N8N_MCP_ACCESS_TOKEN   # or map BWS secret N8N_MCP
+# ./scripts/connect-n8n.sh https://YOUR-N8N-DOMAIN
+# Confirm Authorization stays as Bearer ${N8N_MCP_ACCESS_TOKEN}
+# Canary-first: Available in MCP only on a read-only canary, then /n8n-master-readiness.
