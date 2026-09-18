@@ -1,42 +1,35 @@
-# n8n Master Grok Bot (plugin)
+# n8n Master Grok Bot
 
-Grok plugin for n8n control-plane work: official workflow skills, n8n monorepo engineering skills, community supplement, commerce/inventory master, and live official n8n docs MCP.
+This plugin lets a Grok Bot read live n8n docs and, after you connect it, talk to your n8n instance over HTTPS.
 
-This plugin does **not** bundle an n8n instance token. It does **not** default to production writes. Connect the instance MCP yourself after install. Prove a read-only canary before exposing any other workflow.
+It does not host n8n, does not ship an API key, and will not change production workflows unless you expose them and ask.
 
-## Install (from this marketplace repo)
+## Why install it
 
-```bash
-grok plugin marketplace add /path/to/n8n-master-grok-bot
-grok plugin install n8n-master-grok-bot --trust
-```
+n8n has no Grok OAuth button, and Grok cannot limit which MCP tools it may call. Typical kits either commit a token or open every workflow. This one keeps the key in your environment, ships **docs MCP only**, and treats n8n's **Available in MCP** toggle as the wall. You prove a dummy canary before anything real.
 
-Then enable it in `/plugins` if it is not already on. Load skill `n8n-master-setup`.
+## Who it's for
 
-## Connect an n8n instance
+People who already run n8n (Cloud or HTTPS self-host) and want a Grok Bot to inspect, design, and test workflows.
 
-Grok Build is not in n8n's OAuth client list. Use **Settings > Instance-level MCP > Connect > API key**.
+## What it will not do
 
-```bash
-export N8N_MCP_ACCESS_TOKEN=your-n8n-mcp-api-key
-./scripts/connect-n8n.sh https://YOUR-N8N-DOMAIN
-grok mcp doctor
-```
+- Will not SSH into n8n or your laptop.
+- Will not publish itself to the public Grok marketplace.
+- Will not enable production write workflows on MCP (payments, catalog, ERP, personal data).
+- Will not put secrets in git or chat.
+- Will not read workflow bodies until you mark them Available in MCP. It **can** still see workflow names.
 
-Optional Bitwarden Secrets Manager: store the same key as `N8N_MCP`, then map it to `N8N_MCP_ACCESS_TOKEN`. Never put the token in git or chat.
+## Point your Grok Bot here
 
-Canary-first: enable **Available in MCP** only on a read-only canary. Run `/n8n-master-readiness`, then execute the canary with `executionMode=manual` and expect `{ok:true,canary:true}`. Keep production write workflows off MCP.
+You already have the plugin. Paste the entire file `AGENT_INSTALL.md` into a new Grok Bot. Put your n8n HTTPS origin on the last line (no path).
 
-MCP Server Trigger nodes are a different feature. This plugin uses instance-level MCP.
+The bot wires HTTPS MCP, proves a read-only canary, and stops.
 
-## First prompt
-
-```text
-/n8n-master-readiness
-```
+Then read `SECURITY.md` before you expose any real workflow.
 
 ## Licenses
 
 - Official n8n skills: Apache-2.0 (`docs/LICENSE-n8n-official-skills-Apache-2.0.txt`)
 - Community skills: MIT (`docs/LICENSE-community-skills-MIT.txt`)
-- Original commerce/inventory skill, setup skill, and this packaging: Apache-2.0 unless noted in `docs/LOCAL_PATCHES.md`
+- Original commerce/inventory skill, setup skill, packaging: Apache-2.0

@@ -21,7 +21,7 @@ for f in skills.glob('*/SKILL.md'):
     names[name]=f
 required={'using-n8n-skills-official','n8n-workflow-lifecycle-official','n8n-credentials-and-security-official','n8n-data-tables-official','n8n-debugging-official','n8n-commerce-inventory-master','n8n-master-setup'}
 for n in sorted(required-set(names)): errors.append(f'missing required skill: {n}')
-for rel in ['plugin.json','AGENTS.md','GROK-BOT-INSTRUCTIONS.md','.mcp.json','commands/n8n-master-readiness.md']:
+for rel in ['plugin.json','AGENTS.md','GROK-BOT-INSTRUCTIONS.md','AGENT_INSTALL.md','SECURITY.md','.mcp.json','commands/n8n-master-readiness.md']:
     if not (root/rel).exists(): errors.append(f'missing {rel}')
 if errors:
     print('\n'.join(errors),file=sys.stderr); raise SystemExit(1)

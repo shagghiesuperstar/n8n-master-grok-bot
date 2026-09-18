@@ -5,222 +5,134 @@
       "components": {
         "skills": [
           {
-            "name": "n8n:community-pr-readiness-check",
-            "description": "Checks if a community pull request is ready for human review. Verifies CLA signature, PR title format, description completeness, test coverage, and cubic-dev-ai issues, then tri..."
-          },
-          {
-            "name": "n8n:content-design",
-            "description": "Product content designer for UI copy. Use when writing, reviewing, or auditing user-facing text: button labels, error messages, tooltips, empty states, modal copy, placeholder t..."
-          },
-          {
-            "name": "n8n:conventions",
-            "description": "Quick reference for n8n patterns. Full docs /AGENTS.md"
-          },
-          {
-            "name": "n8n:create-agent-builder-eval",
-            "description": "Authors and calibrates Instance AI evaluations that build standalone n8n Agents through Agent Builder. Use when a change under packages/cli/src/modules/agents affects build-agen..."
-          },
-          {
-            "name": "n8n:create-community-node-lint-rule",
-            "description": "Create new ESLint rules for the @n8n/eslint-plugin-community-nodes package. Use when adding a lint rule, creating a community node lint, or working on eslint-plugin-community-no..."
-          },
-          {
-            "name": "n8n:create-instance-ai-eval",
-            "description": "Authors a new Instance AI workflow or Agent eval case \u2014 written locally as JSON, calibrated against a real build, then pushed to the LangTracer suite CI runs \u2014 build cases, beha..."
-          },
-          {
-            "name": "n8n:create-issue",
-            "description": "Create Linear tickets or GitHub issues following n8n conventions. Use when the user asks to create a ticket, file a bug, open an issue, or says /create-issue."
-          },
-          {
-            "name": "n8n:create-pr",
-            "description": "Creates GitHub pull requests with properly formatted titles that pass the check-pr-title CI validation. Use when creating PRs, submitting changes for review, or when the user sa..."
-          },
-          {
-            "name": "n8n:create-skill",
-            "description": "Guides users through creating effective Agent Skills. Use when you want to create, write, or author a new skill, or asks about skill structure, best practices, or SKILL.md format."
-          },
-          {
-            "name": "n8n:db-migrations",
-            "description": "Authors n8n database migrations. Use when creating or modifying files under packages/@n8n/db/src/migrations/, when the user asks to add a column, table, index, foreign key, or b..."
-          },
-          {
-            "name": "n8n:experiments",
-            "description": "Guides work on `packages/frontend/editor-ui` experiments. Use when creating, extending, wiring, testing, reviewing, or retiring editor-ui experiments, PostHog feature flags, exp..."
-          },
-          {
-            "name": "n8n:gh-stack",
-            "description": "Manage stacked branches and pull requests with the gh-stack GitHub CLI extension. Use when the user wants to create, push, rebase, sync, navigate, or view stacks of dependent PR..."
-          },
-          {
-            "name": "n8n:human-like-code-review",
-            "description": "Reviews a GitHub pull request like a thoughtful human reviewer and writes the feedback to a markdown file. Prioritizes context, architecture fit, solution complexity, bugs, secu..."
-          },
-          {
-            "name": "n8n:linear-issue",
-            "description": "Fetch and analyze Linear issue with all related context. Use when starting work on a Linear ticket, analyzing issues, or gathering context about a Linear issue."
-          },
-          {
-            "name": "n8n:loom-transcript",
-            "description": "Fetch and display the full transcript from a Loom video URL. Use when the user wants to get or read a Loom transcript."
-          },
-          {
             "name": "n8n-agents",
-            "description": "Design n8n AI agents the right way. Use when building or editing any @n8n/n8n-nodes-langchain.* AI node \u2014 an AI Agent, LLM chain, Text Classifier, or Information Extractor \u2014 and..."
+            "description": "Design n8n AI agents the right way. Use when building or editing any @n8n/n8n-nodes-langchain.* AI node \u2014 an AI Agent, LLM chain, Text Classifier, or Informatio..."
           },
           {
             "name": "n8n-agents-official",
-            "description": "Use when building or editing any AI feature in n8n: AI Agents, Text Classifier, Information Extractor, Sentiment Analysis, Summarization Chain, Basic LLM Chain, embeddings, vect..."
+            "description": "Use when building or editing any AI feature in n8n: AI Agents, Text Classifier, Information Extractor, Sentiment Analysis, Summarization Chain, Basic LLM Chain,..."
           },
           {
             "name": "n8n-binary-and-data",
-            "description": "Handle files and binary data in n8n correctly. Use when working with files, images, PDFs, attachments, uploads or downloads, base64, vision/multimodal input, or when an AI agent..."
+            "description": "Handle files and binary data in n8n correctly. Use when working with files, images, PDFs, attachments, uploads or downloads, base64, vision/multimodal input, or..."
           },
           {
             "name": "n8n-binary-and-data-official",
-            "description": "Use when handling files, images, attachments, or binary data in n8n, OR when an AI agent needs to take a user-uploaded file as tool input or return a generated file. For Data Ta..."
+            "description": "Use when handling files, images, attachments, or binary data in n8n, OR when an AI agent needs to take a user-uploaded file as tool input or return a generated..."
           },
           {
             "name": "n8n-code-javascript",
-            "description": "Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with this.helpers / the $helpers global, worki..."
+            "description": "Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with this.helpers / the $help..."
           },
           {
             "name": "n8n-code-nodes-official",
-            "description": "Use when the user reaches for a Code node, mentions writing JavaScript or Python in n8n, or any custom logic comes up in workflow design. Triggers on \"Code node\", \"Code\", \"JavaS..."
+            "description": "Use when the user reaches for a Code node, mentions writing JavaScript or Python in n8n, or any custom logic comes up in workflow design. Triggers on \"Code node..."
           },
           {
             "name": "n8n-code-python",
-            "description": "Write Python in n8n Code nodes (native Python, `language` pythonNative, n8n 2.x). Use when the user explicitly wants Python in a Code node, when migrating old Pyodide/\"Python (B..."
+            "description": "Write Python in n8n Code nodes (native Python, `language` pythonNative, n8n 2.x). Use when the user explicitly wants Python in a Code node, when migrating old P..."
           },
           {
             "name": "n8n-code-tool",
-            "description": "Write JavaScript or Python for the n8n Custom Code Tool (@n8n/n8n-nodes-langchain.toolCode) \u2014 the AI-agent-callable tool, NOT the workflow Code node. Use when building a Code To..."
+            "description": "Write JavaScript or Python for the n8n Custom Code Tool (@n8n/n8n-nodes-langchain.toolCode) \u2014 the AI-agent-callable tool, NOT the workflow Code node. Use when b..."
           },
           {
             "name": "n8n-commerce-inventory-master",
-            "description": "Design, audit, build, test, and operate n8n ecommerce, order, catalog, fulfillment, purchasing, warehouse, and inventory automations. Use for Shopify, WooCommerce, marketplaces,..."
+            "description": "Design, audit, build, test, and operate n8n ecommerce, order, catalog, fulfillment, purchasing, warehouse, and inventory automations. Use for Shopify, WooCommer..."
           },
           {
             "name": "n8n-credentials-and-security-official",
-            "description": "Use when handling any auth, API keys, tokens, OAuth, bearer tokens, basic auth, or secret values in n8n workflows. Triggers on \"API key\", \"token\", \"bearer\", \"OAuth\", \"secret\", \"..."
+            "description": "Use when handling any auth, API keys, tokens, OAuth, bearer tokens, basic auth, or secret values in n8n workflows. Triggers on \"API key\", \"token\", \"bearer\", \"OA..."
           },
           {
             "name": "n8n-data-tables-official",
-            "description": "Use when working with n8n's built-in Data Tables, designing schemas, inserting/updating/upserting rows, deduping, or querying. Triggers on \"Data Table\", \"data table\", `n8n-nodes..."
+            "description": "Use when working with n8n's built-in Data Tables, designing schemas, inserting/updating/upserting rows, deduping, or querying. Triggers on \"Data Table\", \"data t..."
           },
           {
             "name": "n8n-debugging-official",
-            "description": "Use when an n8n workflow isn't working, errors appear, results don't match what was expected, or the user says \"this isn't working.\" Triggers on errors, unexpected output, \"it's..."
+            "description": "Use when an n8n workflow isn't working, errors appear, results don't match what was expected, or the user says \"this isn't working.\" Triggers on errors, unexpec..."
           },
           {
             "name": "n8n-error-handling",
-            "description": "Wire n8n error handling so failures are loud, structured, and recoverable. Use when building any webhook/API workflow, a scheduled or unattended workflow, or any path where a si..."
+            "description": "Wire n8n error handling so failures are loud, structured, and recoverable. Use when building any webhook/API workflow, a scheduled or unattended workflow, or an..."
           },
           {
             "name": "n8n-error-handling-official",
-            "description": "Use when building any webhook-triggered workflow, scheduled/production-bound workflow, wiring a per-node error output, or any workflow where silent failure would drop user-visib..."
+            "description": "Use when building any webhook-triggered workflow, scheduled/production-bound workflow, wiring a per-node error output, or any workflow where silent failure woul..."
           },
           {
             "name": "n8n-expression-syntax",
-            "description": "Validate n8n expression syntax and fix common errors. Use when writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troubleshooting expression errors, ma..."
+            "description": "Validate n8n expression syntax and fix common errors. Use when writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troubleshooting expr..."
           },
           {
             "name": "n8n-expressions-official",
-            "description": "Use when writing or reviewing n8n expressions (`{{...}}` syntax), `$json` / `$node` references, Luxon date code, or expression errors. Triggers on `{{}}`, `$json`, `$node`, `$in..."
+            "description": "Use when writing or reviewing n8n expressions (`{{...}}` syntax), `$json` / `$node` references, Luxon date code, or expression errors. Triggers on `{{}}`, `$jso..."
           },
           {
             "name": "n8n-extending-mcp-official",
-            "description": "Use when you want to expose an n8n workflow as a tool the coding agent can call. Two cases. (1) Wrap n8n API capabilities the MCP doesn''t natively expose: folder deletion, proj..."
+            "description": "Use when you want to expose an n8n workflow as a tool the coding agent can call. Two cases. (1) Wrap n8n API capabilities the MCP doesn''t natively expose: fold..."
           },
           {
             "name": "n8n-loops-official",
-            "description": "Use when working with multi-item data, batches, paginated APIs, rate-limited APIs, fan-out across multiple branches, anything that needs to \"do this for each\", or any time the u..."
+            "description": "Use when working with multi-item data, batches, paginated APIs, rate-limited APIs, fan-out across multiple branches, anything that needs to \"do this for each\",..."
+          },
+          {
+            "name": "n8n-master-setup",
+            "description": "Use when installing this Grok plugin, wiring n8n Instance-level MCP, loading N8N_MCP from Bitwarden, or proving canary-first safety before any workflow write."
           },
           {
             "name": "n8n-mcp-tools-expert",
-            "description": "Expert guide for using n8n-mcp MCP tools effectively. Use when searching for nodes, validating configurations, accessing templates, managing workflows, organizing workflows into..."
+            "description": "Expert guide for using n8n-mcp MCP tools effectively. Use when searching for nodes, validating configurations, accessing templates, managing workflows, organizi..."
           },
           {
             "name": "n8n-multi-instance",
-            "description": "Use when an n8n-mcp account targets more than one n8n instance \u2014 i.e. the `n8n_instances` tool is available, the user mentions multiple n8n instances or environments (prod vs st..."
+            "description": "Use when an n8n-mcp account targets more than one n8n instance \u2014 i.e. the `n8n_instances` tool is available, the user mentions multiple n8n instances or environ..."
           },
           {
             "name": "n8n-node-configuration",
-            "description": "Operation-aware node configuration guidance. Use when configuring nodes, understanding property dependencies, determining required fields, choosing between get_node detail level..."
+            "description": "Operation-aware node configuration guidance. Use when configuring nodes, understanding property dependencies, determining required fields, choosing between get_..."
           },
           {
             "name": "n8n-node-configuration-official",
-            "description": "Use when configuring any n8n node: HTTP, webhooks, database, comms (Slack/Gmail/Discord), AI, triggers, Merge, anything. Triggers on any node-builder call (`node(...)`, `trigger..."
+            "description": "Use when configuring any n8n node: HTTP, webhooks, database, comms (Slack/Gmail/Discord), AI, triggers, Merge, anything. Triggers on any node-builder call (`nod..."
           },
           {
             "name": "n8n-self-hosting",
-            "description": "Deploy a production self-hosted n8n end-to-end to a fresh Linux VM over SSH, using Docker Compose behind a Caddy reverse proxy with automatic HTTPS. Use whenever the user wants ..."
+            "description": "Deploy a production self-hosted n8n end-to-end to a fresh Linux VM over SSH, using Docker Compose behind a Caddy reverse proxy with automatic HTTPS. Use wheneve..."
           },
           {
             "name": "n8n-subworkflows",
-            "description": "Build reusable, composable n8n sub-workflows. Use when extracting shared logic, building anything multi-step or reused across workflows, or any workflow over ~10 nodes \u2014 and whe..."
+            "description": "Build reusable, composable n8n sub-workflows. Use when extracting shared logic, building anything multi-step or reused across workflows, or any workflow over ~1..."
           },
           {
             "name": "n8n-subworkflows-official",
-            "description": "Use when building anything multi-step, anything that looks repeatable, anything the user mentions reusing, or any workflow with more than ~10 nodes. Triggers on \"reuse\", \"I do t..."
+            "description": "Use when building anything multi-step, anything that looks repeatable, anything the user mentions reusing, or any workflow with more than ~10 nodes. Triggers on..."
           },
           {
             "name": "n8n-validation-expert",
-            "description": "Interpret validation errors and guide fixing them. Use when encountering validation errors, validation warnings, false positives, operator structure issues, or need help underst..."
+            "description": "Interpret validation errors and guide fixing them. Use when encountering validation errors, validation warnings, false positives, operator structure issues, or..."
           },
           {
             "name": "n8n-workflow-lifecycle-official",
-            "description": "Use when starting, designing, organizing, finishing, or shipping an n8n workflow. Covers visual layout (sticky notes), descriptions that capture the *why*, node names, validatio..."
+            "description": "Use when starting, designing, organizing, finishing, or shipping an n8n workflow. Covers visual layout (sticky notes), descriptions that capture the *why*, node..."
           },
           {
             "name": "n8n-workflow-patterns",
-            "description": "Proven workflow architectural patterns from real n8n workflows. Use when building new workflows, designing workflow structure, choosing workflow patterns, planning workflow arch..."
-          },
-          {
-            "name": "n8n:nathan",
-            "description": "Deploy a temporary n8n test instance (or generate a local docker run command) via the internal \"Nathan\" bot, from the repo instead of Slack. Use after opening a PR to offer the ..."
-          },
-          {
-            "name": "n8n:node-add-oauth",
-            "description": "Add OAuth2 credential support to an existing n8n node \u2014 creates the credential file, updates the node, adds tests, and keeps the CLI constant in sync. Use when the user says /no..."
-          },
-          {
-            "name": "n8n:protect-endpoints",
-            "description": "Applies n8n's RBAC scope decorators to REST endpoints. Use when creating a new @RestController, adding any @Get/@Post/@Put/@Patch/@Delete route to an existing controller, or rev..."
-          },
-          {
-            "name": "n8n:public-api",
-            "description": "Adds, migrates, or updates n8n Public API v1 endpoints with @PublicApiController \u2014 public DTOs, API-key and RBAC scopes, cursor pagination, OpenAPI + coverage wiring, and tests...."
-          },
-          {
-            "name": "n8n:reproduce-bug",
-            "description": "Reproduce a bug from a Linear ticket with a failing test. Expects the full ticket context (title, description, comments) to be provided as input."
-          },
-          {
-            "name": "n8n:spec-driven-development",
-            "description": "Keeps implementation and specs in sync. Use when working on a feature that has a spec in .agents/specs/, when the user says /spec, or when starting implementation of a documente..."
-          },
-          {
-            "name": "n8n:telemetry",
-            "description": "Guides adding, changing, and reviewing telemetry through the `@n8n/telemetry` event registry. Use when working on telemetry, analytics, tracking, product events, `track()` calls..."
-          },
-          {
-            "name": "n8n:ui-design",
-            "description": "Guidelines on designing and building UI. Use when working in editor-ui or design-system packages. Triggers for tasks that include refactoring components, styling changes, or fea..."
+            "description": "Proven workflow architectural patterns from real n8n workflows. Use when building new workflows, designing workflow structure, choosing workflow patterns, plann..."
           },
           {
             "name": "using-n8n-mcp-skills",
-            "description": "Use when building, editing, validating, testing, or debugging an n8n workflow through the n8n-mcp MCP server \u2014 designing a flow, configuring a node, writing an expression or Cod..."
+            "description": "Use when building, editing, validating, testing, or debugging an n8n workflow through the n8n-mcp MCP server \u2014 designing a flow, configuring a node, writing an..."
           },
           {
             "name": "using-n8n-skills-official",
-            "description": "Use when working with n8n workflows in any capacity. The always-on protocol for the n8n-skills plugin, loaded by the SessionStart hook every session. Routes to the right skill, ..."
+            "description": "Use when working with n8n workflows in any capacity. The always-on protocol for the n8n-skills plugin, loaded by the SessionStart hook every session. Routes to..."
           }
         ],
         "commands": [
           {
             "name": "n8n-master-readiness",
-            "description": "Run a read-only n8n master readiness audit"
+            "description": "Run a read-only n8n master readiness audit. Use when starting this plugin, after connecting an n8n instance MCP, or when the user says /n8n-master-readiness."
           }
         ]
       }
