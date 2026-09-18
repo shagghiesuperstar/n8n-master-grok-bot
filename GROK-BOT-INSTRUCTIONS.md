@@ -2,6 +2,8 @@
 
 Paste `AGENT_INSTALL.md` as the first message. Put the n8n HTTPS origin on the last line. Do not paste the API key.
 
+Product goal: this repo is a public template; marketplace publish is intended. Scrub tenant/secrets before publish.
+
 After install, follow `AGENTS.md` and `SECURITY.md`.
 
 Connectors (grok.com/connectors), HTTP only:

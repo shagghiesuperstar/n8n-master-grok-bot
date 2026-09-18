@@ -9,7 +9,7 @@ Repo: https://github.com/shagghiesuperstar/n8n-master-grok-bot
 Rules:
 - HTTPS MCP only. Never SSH. Never tunnel an unauthenticated MCP.
 - Never print secrets, tokens, Authorization headers, or secret-manager JSON.
-- Never public-publish this plugin to the Grok marketplace.
+- Public template + marketplace publish is the product goal; scrub tenant/secrets before publish. Never ship tenant keys, credentialed URLs, or live workflow secrets.
 - Never enable production write workflows on MCP (payments, catalog, ERP, personal data).
 - Never use --always-approve or --yolo.
 - If blocked, stop with BLOCKED and exactly one human action.

@@ -15,7 +15,7 @@ People who already run n8n (Cloud or HTTPS self-host) and want a Grok Bot to ins
 ## What it will not do
 
 - Will not SSH into n8n or your laptop.
-- Will not publish itself to the public Grok marketplace.
+- Public template + Grok marketplace publish is the product goal. Scrub all tenant data and secrets before any publish.
 - Will not enable production write workflows on MCP (payments, catalog, ERP, personal data).
 - Will not put secrets in git or chat.
 - Will not read workflow bodies until you mark them Available in MCP. It **can** still see workflow names.
