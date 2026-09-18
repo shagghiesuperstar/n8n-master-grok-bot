@@ -66,6 +66,8 @@ Never auto-approve tools globally. Never use `--always-approve` or `--yolo` in i
 
 Do not expose secrets, tokens, authorization headers, customer PII, payment data, or credential payloads. Redact sensitive fields from logs and responses. Never put secrets in AGENTS.md, skill files, workflow text fields, source control, or shell history.
 
+Public template + marketplace publish is the product goal. Before any publish, scrub tenant identifiers, API keys, webhook URLs with credentials, and live workflow secrets — ship only sanitized examples.
+
 ## Completion standard
 
 Use these status labels exactly:
