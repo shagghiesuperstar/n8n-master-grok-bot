@@ -1,12 +1,12 @@
 # n8n Master Grok Bot
 
-This plugin turns a Grok Bot into an n8n control plane: live official docs, official workflow skills, and (after you connect it) your n8n instance over HTTP MCP.
+This plugin lets a Grok Bot read live n8n docs and, after you connect it, talk to your n8n instance over HTTPS.
 
-It does not host n8n, it does not ship a token, and it will not write production workflows unless you expose them and say so.
+It does not host n8n, does not ship an API key, and will not change production workflows unless you expose them and ask.
 
 ## Why install it
 
-Grok is not in n8n's OAuth client list, and Grok cannot whitelist MCP tools. Most n8n+AI setups either commit a token or expose every workflow. This one keeps the token as an env placeholder, ships **docs MCP only**, and treats **Available in MCP** as the real wall. You prove a read-only canary before anything else.
+n8n has no Grok OAuth button, and Grok cannot limit which MCP tools it may call. Typical kits either commit a token or open every workflow. This one keeps the key in your environment, ships **docs MCP only**, and treats n8n's **Available in MCP** toggle as the wall. You prove a dummy canary before anything real.
 
 ## Who it's for
 
@@ -16,11 +16,13 @@ People who already run n8n (Cloud or HTTPS self-host) and want a Grok Bot to ins
 
 - Will not SSH into n8n or your laptop.
 - Will not publish itself to the public Grok marketplace.
-- Will not enable production write workflows on MCP (payments, catalog, ERP, PII).
+- Will not enable production write workflows on MCP (payments, catalog, ERP, personal data).
 - Will not put secrets in git or chat.
 - Will not read workflow bodies until you mark them Available in MCP. It **can** still see workflow names.
 
 ## 60-second install
+
+If you want the bot to do this, skip to the next section.
 
 ```bash
 curl -fsSL https://x.ai/cli/install.sh | bash   # skip if grok already works
@@ -37,6 +39,6 @@ In n8n: Settings → Instance-level MCP → on. Use the **API key** tab (not OAu
 
 Open a new Grok Bot. Paste the entire file `AGENT_INSTALL.md`. Put your n8n HTTPS origin on the last line (no path, example `https://YOUR-WORKSPACE.app.n8n.cloud`).
 
-The bot clones/installs, wires HTTP MCP, proves a read-only canary, and stops. You should not have to run the leftover commands yourself.
+The bot clones if needed, installs, wires HTTPS MCP, proves a read-only canary, and stops.
 
 Then read `SECURITY.md` before you expose any real workflow.

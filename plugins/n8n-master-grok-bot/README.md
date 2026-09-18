@@ -1,17 +1,32 @@
-# n8n Master Grok Bot (plugin)
+# n8n Master Grok Bot
 
-Grok plugin that turns a bot into an n8n control plane. Docs MCP is bundled. Instance MCP is not. Token is not bundled. Production writes are not the default.
+This plugin lets a Grok Bot read live n8n docs and, after you connect it, talk to your n8n instance over HTTPS.
 
-Install from the marketplace repo root:
+It does not host n8n, does not ship an API key, and will not change production workflows unless you expose them and ask.
 
-```bash
-grok plugin marketplace add /path/to/n8n-master-grok-bot
-grok plugin install n8n-master-grok-bot --trust
-```
+## Why install it
 
-Then paste `AGENT_INSTALL.md` into the bot, with your n8n HTTPS origin on the last line.
+n8n has no Grok OAuth button, and Grok cannot limit which MCP tools it may call. Typical kits either commit a token or open every workflow. This one keeps the key in your environment, ships **docs MCP only**, and treats n8n's **Available in MCP** toggle as the wall. You prove a dummy canary before anything real.
 
-Read `SECURITY.md` before exposing a real workflow. First execute is a read-only canary.
+## Who it's for
+
+People who already run n8n (Cloud or HTTPS self-host) and want a Grok Bot to inspect, design, and test workflows.
+
+## What it will not do
+
+- Will not SSH into n8n or your laptop.
+- Will not publish itself to the public Grok marketplace.
+- Will not enable production write workflows on MCP (payments, catalog, ERP, personal data).
+- Will not put secrets in git or chat.
+- Will not read workflow bodies until you mark them Available in MCP. It **can** still see workflow names.
+
+## Point your Grok Bot here
+
+You already have the plugin. Paste the entire file `AGENT_INSTALL.md` into a new Grok Bot. Put your n8n HTTPS origin on the last line (no path).
+
+The bot wires HTTPS MCP, proves a read-only canary, and stops.
+
+Then read `SECURITY.md` before you expose any real workflow.
 
 ## Licenses
 

@@ -1,6 +1,6 @@
 # Security
 
-This plugin is a control plane, not a sandbox. Grok cannot whitelist MCP tools. Whatever you mark **Available in MCP** is callable.
+Grok cannot limit which MCP tools it may call. If you mark a workflow **Available in MCP**, the bot can call it.
 
 ## Instance MCP sees workflow names
 
@@ -12,9 +12,9 @@ Do not turn Available in MCP on just to make search look tidy.
 
 ## Available in MCP is the real wall
 
-Grok's `mcp add` has no `tools.include`. execute/update/publish are present once the instance is connected.
+Grok's `mcp add` has no tool allowlist. execute/update/publish are present once the instance is connected.
 
-The blast-radius control is n8n:
+The wall is in n8n:
 
 - Per-workflow **Available in MCP**
 - Project/folder **Manage MCP access** if you use it
@@ -43,15 +43,15 @@ Defaults:
 
 - No production execute/publish/update
 - No `--always-approve` / `--yolo`
-- Payments, catalog, PII, DNS, secrets, Zoho, Medusa stay off MCP until a human says so in that chat
+- Payments, catalog, personal data, DNS, and secrets stay off MCP until a human says so in that chat
 
 ## Secrets never in this repo
 
 Grok is not in n8n's OAuth client dropdown. Use the Instance-level MCP **API key**.
 
-Store it outside git as `N8N_MCP` (alias `N8N_MCP_ACCESS_TOKEN`). Optional Bitwarden name: `N8N_MCP`. Prefer `bws run --` so the value never hits the shell transcript.
+Store it outside git as `N8N_MCP` (alias `N8N_MCP_ACCESS_TOKEN`). If you use a secret manager, keep the value out of the shell transcript (`bws run --` is one way).
 
-`.grok/config.toml` and connect scripts must keep `Authorization: Bearer ${…}` as a placeholder. If a raw key lands in git, rotate the key in n8n and treat the commit as a leak.
+`.grok/config.toml` must keep `Authorization: Bearer ${N8N_MCP_ACCESS_TOKEN}` as a placeholder. If a raw key lands in git, rotate the key in n8n and treat the commit as a leak.
 
 Never put tokens in README, skills, workflow text fields, or chat.
 

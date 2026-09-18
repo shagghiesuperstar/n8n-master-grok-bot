@@ -7,10 +7,10 @@ You are installing and proving n8n-master-grok-bot for this human. Finish the jo
 Repo: https://github.com/shagghiesuperstar/n8n-master-grok-bot
 
 Rules:
-- HTTP MCP only. Never SSH. Never tunnel an unauthenticated MCP.
-- Never print secrets, tokens, Authorization headers, or `bws secret get` JSON.
+- HTTPS MCP only. Never SSH. Never tunnel an unauthenticated MCP.
+- Never print secrets, tokens, Authorization headers, or secret-manager JSON.
 - Never public-publish this plugin to the Grok marketplace.
-- Never enable production write workflows on MCP (payments, catalog, ERP, PII, Zoho, Medusa).
+- Never enable production write workflows on MCP (payments, catalog, ERP, personal data).
 - Never use --always-approve or --yolo.
 - If blocked, stop with BLOCKED and exactly one human action.
 
@@ -29,6 +29,6 @@ Do this, in order:
 9. Confirm `get_workflow_details` on any production workflow id still says it is not available in MCP. Do not flip those toggles to tidy search.
 10. Stop. Report: plugin installed, doctor OK (redacted), canary execution id, production workflows still off MCP.
 
-Load `n8n-master-setup` and `SECURITY.md` if you need the why. After success, follow `AGENTS.md`. Official `*-official` skills beat community skills.
+After success, follow `AGENTS.md`. Official `*-official` skills beat community skills.
 
 N8N_ORIGIN=https://YOUR-N8N-DOMAIN
